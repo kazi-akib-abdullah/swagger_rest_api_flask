@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Assignment",
+    "version": "1.0.0",
+    "title": "Swagger Rest API Flask"
+
+  },
+  "tags": [
+    {
+      "name": "Villa Info",
+      "description": "API for Villas and Hotels"
+    }
+  ],
+  "paths": {
+        "/unprotected": {
+      "parameters": [
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "Name of Villa",
+          "type": "string"
+        },
+        {
+          "name": "bedroom",
+          "in": "query",
+          "required": false,
+          "description": "Number of Bedrooms",
+          "type": "string"
+        },
+        {
+          "name": "sleeps",
+          "in": "query",
+          "required": false,
+          "description": "Number of Sleepers",
+          "type": "string"
+        },
+        {
+          "name": "bathroom",
+          "in": "query",
+          "required": false,
+          "description": "Number of Bathrooms",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "in": "query",
+          "required": false,
+          "description": "Price",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "in": "query",
+          "required": false,
+          "description": "Boone location",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "House request"
+        ],
+        "summary": "Find House with given data",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "description": "Name of Villa",
+            "schema": {
+              "$ref": "#/components/schemas/title"
+            }
+          },
+          {
+            "name": "bedroom",
+            "in": "query",
+            "required": false,
+            "description": "Number of Bedrooms",
+            "schema": {
+              "$ref": "#/components/schemas/bedroom"
+            }
+          },
+          {
+            "name": "sleeps",
+            "in": "query",
+            "required": false,
+            "description": "Number of Sleepers",
+            "schema": {
+              "$ref": "#/components/schemas/sleeps"
+            }
+          },
+          {
+            "name": "bathroom",
+            "in": "query",
+            "required": false,
+            "description": "Number of Bathrooms",
+            "schema": {
+              "$ref": "#/components/schemas/bathroom"
+            }
+          },
+          {
+            "name": "price",
+            "in": "query",
+            "required": false,
+            "description": "Price",
+            "schema": {
+              "$ref": "#/components/schemas/price"
+            }
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "required": false,
+            "description": "Boone location",
+            "schema": {
+              "$ref": "#/components/schemas/location"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Misunderstood Request."
+          },
+          "404": {
+            "description": "Failed. House request not found."
+          }
+        }
+      }}},
+  "components": {
+    "schemas": {
+      "title": {
+        "properties": {
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "bedroom": {
+        "properties": {
+          "bed": {
+            "type": "string"
+          }
+        }
+      },
+      "sleeps": {
+        "properties": {
+          "sleep": {
+            "type": "string"
+          }
+        }
+      },
+      "bathroom": {
+        "properties": {
+          "bath": {
+            "type": "string"
+          }
+        }
+      },
+      "price": {
+        "properties": {
+          "money": {
+            "type": "string"
+          }
+        }
+      },
+      "location": {
+        "properties": {
+          "loc": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
