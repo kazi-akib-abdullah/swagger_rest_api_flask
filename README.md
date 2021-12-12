@@ -25,3 +25,5 @@ Note: I install PyJWT library for windows machine since only jwt was not working
 ```python
 pip3 install jwt
 ```
+### Use 'password' to the password field and keep username blank as it is.
+### Go here http://127.0.0.1:5000/ to generete token and click the token-url link to redirect to api. 
